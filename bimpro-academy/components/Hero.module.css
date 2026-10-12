@@ -1,0 +1,229 @@
+/* Figma: Hero Section — responsive desktop 1440px down to mobile 320px */
+.section {
+  position: relative;
+  padding-top: clamp(48px, 8vw, 140px);
+  padding-bottom: clamp(64px, 10vw, 180px);
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 648px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 32px);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(12px, 1.8vw, 16px);
+}
+
+.badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  background: #f9fbff;
+  border: 1px solid var(--blue-100);
+  border-radius: 6px;
+  font-family: var(--font-hanken-stack);
+  font-weight: 700;
+  font-size: clamp(11px, 1vw, 12px);
+  line-height: 14.4px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--blue-400);
+  animation: rise 0.6s ease both;
+}
+
+.title {
+  font-weight: 600;
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 1.06;
+  letter-spacing: -1px;
+  color: var(--neutral-800);
+  animation: rise 0.6s 0.08s ease both;
+  word-break: break-word;
+}
+
+.accent {
+  color: var(--blue-500);
+}
+
+.lead {
+  font-weight: 400;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.55;
+  color: var(--neutral-600);
+  animation: rise 0.6s 0.16s ease both;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  animation: rise 0.6s 0.24s ease both;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.primary {
+  background: var(--blue-500);
+  color: var(--neutral-50);
+}
+
+.primary:hover {
+  background: var(--blue-600);
+  box-shadow: 0 10px 24px -10px rgb(59 130 246 / 0.7);
+  transform: translateY(-1px);
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.primary:hover .arrow {
+  transform: translateX(3px);
+}
+
+.secondary {
+  background: rgb(255 255 255 / 0.1);
+  border: 1px solid var(--neutral-300);
+  color: var(--neutral-950);
+}
+
+.secondary:hover {
+  background: var(--white);
+  border-color: var(--neutral-400);
+  transform: translateY(-1px);
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--neutral-300);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px clamp(16px, 3vw, 32px);
+  animation: rise 0.6s 0.32s ease both;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-hanken-stack);
+  font-weight: 500;
+  font-size: clamp(11px, 1vw, 12px);
+  line-height: 14.4px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--neutral-600);
+}
+
+.illustrationWrap {
+  position: relative;
+  width: 100%;
+  max-width: 690px;
+  margin-inline: auto;
+  user-select: none;
+  animation: fade 1s 0.2s ease both;
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.04));
+  object-fit: contain;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tablet & Mobile Layout */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .illustrationWrap {
+    max-width: 580px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 36px;
+    padding-bottom: 56px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

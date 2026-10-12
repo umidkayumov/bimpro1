@@ -1,0 +1,270 @@
+/* Figma: Container 5002:10588 — 1440x74, padding 16/0, bg #fcfcfc */
+.wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--header-bg) 92%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 14px;
+  min-height: 74px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 6vw, 120px);
+}
+
+.desktopNav {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 40px);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--neutral-700);
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--blue-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.link:hover {
+  color: var(--blue-600);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.desktopCta {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+
+.ghost,
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ghost {
+  color: var(--neutral-700);
+}
+
+.ghost:hover {
+  background: var(--slate-100);
+  color: var(--neutral-950);
+}
+
+.primary {
+  background: var(--blue-500);
+  color: var(--neutral-50);
+}
+
+.primary:hover {
+  background: var(--blue-600);
+  box-shadow: 0 6px 16px -6px rgb(59 130 246 / 0.6);
+  transform: translateY(-1px);
+}
+
+/* Mobile Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 110;
+  gap: 5px;
+}
+
+.burgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--neutral-800);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.burgerLineTop {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerLineMid {
+  opacity: 0;
+}
+
+.burgerLineBot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer & Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  top: 74px;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 95;
+  animation: fadeIn 0.2s ease;
+}
+
+.mobileDrawer {
+  display: none;
+  position: fixed;
+  top: 74px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--slate-200);
+  padding: 24px;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.mobileDrawerOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 12px 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--neutral-800);
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:active {
+  background-color: var(--slate-100);
+  color: var(--blue-600);
+}
+
+.mobileCta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--slate-100);
+}
+
+.mobileGhost,
+.mobilePrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+
+.mobileGhost {
+  background: var(--slate-100);
+  color: var(--neutral-800);
+}
+
+.mobilePrimary {
+  background: var(--blue-500);
+  color: var(--white);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+  .desktopCta {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobileDrawer {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding-inline: 16px;
+  }
+}
