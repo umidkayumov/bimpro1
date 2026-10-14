@@ -1,9 +1,12 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "./Icon";
 import type { Course } from "@/lib/courses";
 import styles from "./CourseCard.module.css";
 
 export default function CourseCard({ course }: { course: Course }) {
+  const href = course.id === "revit-mep-ovik" ? "/courses/revit-mep" : "#";
+
   return (
     <article className={styles.card} id={`course-${course.id}`}>
       <div className={styles.media}>
@@ -40,7 +43,7 @@ export default function CourseCard({ course }: { course: Course }) {
                   course.titleTone === "neutral" ? styles.titleNeutral : ""
                 }`}
               >
-                {course.title}
+                <Link href={href}>{course.title}</Link>
               </h3>
               <p className={styles.desc}>{course.description}</p>
             </div>
@@ -69,10 +72,10 @@ export default function CourseCard({ course }: { course: Course }) {
               {course.price}
             </span>
           </div>
-          <a href="#" className={styles.button} id={`course-${course.id}-cta`}>
+          <Link href={href} className={styles.button} id={`course-${course.id}-cta`}>
             {course.cta}
             <Icon name="arrow-right" size={16} className={styles.arrow} />
-          </a>
+          </Link>
         </div>
       </div>
     </article>

@@ -1,0 +1,15 @@
+/* Figma: 914px main column + 64px gap + 460px purchase card */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 914px) 460px;
+  column-gap: 64px;
+  align-items: start;
+  padding-top: 45px;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+  }
+}

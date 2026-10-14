@@ -20,7 +20,7 @@ const hanken = Hanken_Grotesk({
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 const jakarta = Plus_Jakarta_Sans({
