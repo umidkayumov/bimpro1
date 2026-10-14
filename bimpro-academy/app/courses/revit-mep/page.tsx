@@ -24,13 +24,22 @@ export default function RevitMepCoursePage() {
     <>
       <Header />
       <CourseSubNav />
-      <main>
-        <div className={`container ${styles.hero}`}>
-          <CourseHero />
-          <PurchaseCard />
+      <main className={styles.main}>
+        <div className={`container ${styles.courseGrid}`}>
+          <div className={styles.heroArea}>
+            <CourseHero />
+          </div>
+          <div className={styles.sidebarArea}>
+            <PurchaseCard />
+          </div>
+          <div className={styles.outcomesBg} aria-hidden="true" />
+          <div className={styles.outcomesArea}>
+            <Outcomes />
+          </div>
+          <div className={styles.curriculumArea}>
+            <Curriculum />
+          </div>
         </div>
-        <Outcomes />
-        <Curriculum />
         <InstructorSection />
         <Audience />
         <Testimonials />

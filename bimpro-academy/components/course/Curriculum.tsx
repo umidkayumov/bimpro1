@@ -27,7 +27,6 @@ function ModuleSummary({ module, index }: { module: Module; index: number }) {
 export default function Curriculum() {
   return (
     <section id="dastur" className={styles.section} aria-labelledby="curriculum-title">
-      <div className="container">
       <div className={styles.inner}>
         <div className={styles.head}>
           <SectionHeading
@@ -77,7 +76,6 @@ export default function Curriculum() {
             </li>
           ))}
         </ul>
-      </div>
       </div>
     </section>
   );

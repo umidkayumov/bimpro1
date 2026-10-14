@@ -1,12 +1,10 @@
-/* Figma: Frame 47 — 74px header, 12px gap, 1px rule, 12px gap, 64px row */
 .wrap {
   position: sticky;
   top: 74px;
   z-index: 90;
-  margin-top: 12px;
-  padding-top: 11px;
   background: var(--header-bg);
   border-top: 1px solid var(--neutral-100);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .inner {

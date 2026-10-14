@@ -6,7 +6,7 @@ import styles from "./Outcomes.module.css";
 export default function Outcomes() {
   return (
     <section id="konikmalar" className={styles.section} aria-labelledby="outcomes-title">
-      <div className={`container ${styles.inner}`}>
+      <div className={styles.inner}>
         <SectionHeading
           id="outcomes-title"
           eyebrow="AMALIY KO'NIKMALAR"
